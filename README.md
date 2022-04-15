@@ -71,10 +71,10 @@ lien d'agrégation statique chaque fois que les deux périphériques prennent en
 
 ## CONFIGURATION
 ```
-Il y a deux façons de configurer EtherChannel. La première est de procéder manuellement(via le mode “on”) en
-saisissant une commande sur chaque port à agréger, des deux côtés de la liaison. La seconde est de laisser
-faire la configuration automatique, à l'aide de l'un des deux protocoles Port Aggregation Protocol (PAgP) et
-Link Aggregation Control Protocol (LACP).
+Il y a deux façons de configurer EtherChannel. La première est de procéder manuellement(via le mode “on”) 
+en saisissant une commande sur chaque port à agréger, des deux côtés de la liaison. La seconde est de
+laisser faire la configuration automatique, à l'aide de l'un des deux protocoles Port Aggregation Protocol
+(PAgP) et Link Aggregation Control Protocol (LACP).
 ```
 
 ![image](https://user-images.githubusercontent.com/83721477/163565061-afd5c399-58ab-4f90-a6c2-e5e75a4f637e.png)
