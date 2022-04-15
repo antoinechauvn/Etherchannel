@@ -37,40 +37,42 @@ _Note bis: Dans un EtherChannel, tous les ports doivent obligatoirement avoir un
 ### PAGP
 ```
 Le protocole PAgP est un protocole propriétaire de Cisco qui facilite la création automatique de liaisons
-EtherChannel. Quand une liaison EtherChannel est configurée grâce à PAgP, des paquets PAgP sont envoyés entre
-les ports compatibles EtherChannel pour négocier la formation d'un canal. Quand PAgP identifie des liaisons
-Ethernet associées, il groupe les liaisons dans un EtherChannel. L'EtherChannel est ensuite ajouté à l'arbre
-recouvrant comme port unique.
+EtherChannel. Quand une liaison EtherChannel est configurée grâce à PAgP, des paquets PAgP sont envoyés
+entre les ports compatibles EtherChannel pour négocier la formation d'un canal. Quand PAgP identifie des
+liaisons Ethernet associées, il groupe les liaisons dans un EtherChannel. L'EtherChannel est ensuite ajouté
+à l'arbre recouvrant comme port unique.
 
 S'il est activé, PAgP gère également l'EtherChannel. Les paquets PAgP sont envoyés toutes les 30 secondes.
 PAgP vérifie la cohérence de la configuration et gère les ajouts de liaison et les défaillances entre
-deux commutateurs. Il garantit que tous les ports ont le même type de configuration quand un EtherChannel est créé.
+deux commutateurs. Il garantit que tous les ports ont le même type de configuration
+quand un EtherChannel est créé.
 ```
 
 ### LACP
 ```
-Le protocole de contrôle d'agrégation de liens est une norme IEEE définie dans IEEE 802.3ad. LACP permet aux
-périphériques d'envoyer des LACPDU (Link Aggregation Control Protocol Data Units) entre eux pour établir une
-connexion d'agrégation de liens. Vous devez toujours configurer le lien d'agrégation sur chaque périphérique,
-mais le protocole LACP permet d'éviter l'un des problèmes les plus courants qui peuvent survenir lors de la
-configuration de l'agrégation de liens : les paramètres du lien d'agrégation sont mal configurés.
-Si les périphériques détectent qu'ils ne peuvent pas établir de connexion d'agrégation de liens,
-ils n'essaient pas de l'établir et la liaison s'affiche comme « hors service » dans l'interface d'administration.
+Le protocole de contrôle d'agrégation de liens est une norme IEEE définie dans IEEE 802.3ad. LACP permet
+aux périphériques d'envoyer des LACPDU (Link Aggregation Control Protocol Data Units) entre eux pour
+établir une connexion d'agrégation de liens. Vous devez toujours configurer le lien d'agrégation sur
+chaque périphérique, mais le protocole LACP permet d'éviter l'un des problèmes les plus courants qui
+peuvent survenir lors de la configuration de l'agrégation de liens : les paramètres du lien d'agrégation
+sont mal configurés. Si les périphériques détectent qu'ils ne peuvent pas établir de connexion d'agrégation
+de liens, ils n'essaient pas de l'établir et la liaison s'affiche comme « hors service » dans l'interface
+d'administration.
 
 Une autre caractéristique utile du LACP est que lorsqu'une liaison membre cesse d'envoyer des LACPDU
 (si le câble est débranché, par exemple), il est retiré du lien d'agrégation.
 Cela permet de minimiser la perte de paquets.
 
 Les deux périphériques doivent prendre en charge le LACP pour que vous puissiez configurer un lien d'agrégation
-dynamique entre ces périphériques. Nous vous recommandons d'utiliser le LACP au lieu d'un lien d'agrégation statique chaque
-fois que les deux périphériques prennent en charge le LACP.
+dynamique entre ces périphériques. Nous vous recommandons d'utiliser le LACP au lieu d'un lien d'agrégation
+statique chaque fois que les deux périphériques prennent en charge le LACP.
 ```
 
 ## CONFIGURATION
 ```
 Il y a deux façons de configurer EtherChannel. La première est de procéder manuellement(via le mode “on”) en
-saisissant une commande sur chaque port à agréger, des deux côtés de la liaison. La seconde est de laisser faire
-la configuration automatique, à l'aide de l'un des deux protocoles Port Aggregation Protocol (PAgP) et
+saisissant une commande sur chaque port à agréger, des deux côtés de la liaison. La seconde est de laisser
+faire la configuration automatique, à l'aide de l'un des deux protocoles Port Aggregation Protocol (PAgP) et
 Link Aggregation Control Protocol (LACP).
 ```
 
