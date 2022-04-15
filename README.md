@@ -69,7 +69,7 @@ d'agrégation dynamique entre ces périphériques. Nous vous recommandons d'util
 lien d'agrégation statique chaque fois que les deux périphériques prennent en charge le LACP.
 ```
 
-## CONFIGURATION
+## Configuration
 ```
 Il y a deux façons de configurer EtherChannel. La première est de procéder manuellement(via le mode “on”) 
 en saisissant une commande sur chaque port à agréger, des deux côtés de la liaison. La seconde est de
