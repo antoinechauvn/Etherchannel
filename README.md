@@ -64,9 +64,10 @@ Une autre caractéristique utile du LACP est que lorsqu'une liaison membre cesse
 Cela permet de minimiser la perte de paquets.
 
 Les deux périphériques doivent prendre en charge le LACP pour que vous puissiez configurer un lien
-d'agrégation dynamique entre ces périphériques. Nous vous recommandons d'utiliser le LACP au lieu d'un
-lien d'agrégation statique chaque fois que les deux périphériques prennent en charge le LACP.
+d'agrégation dynamique entre ces périphériques.
 ```
+*Nous vous recommandons d'utiliser le LACP au lieu d'un
+lien d'agrégation statique chaque fois que les deux périphériques prennent en charge le LACP*
 
 ## Configuration
 ```
