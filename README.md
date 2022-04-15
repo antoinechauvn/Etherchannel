@@ -43,3 +43,77 @@ _Note: Un EtherChannel peut être de niveau 2 ou niveau 3_
 ```
 Il y a deux façons de configurer EtherChannel. La première est de procéder manuellement(via le mode “on”) en saisissant une commande sur chaque port à agréger, des deux côtés de la liaison. La seconde est de laisser faire la configuration automatique, à l'aide de l'un des deux protocoles Port Aggregation Protocol (PAgP) et Link Aggregation Control Protocol (LACP).
 ```
+
+### ETHERCHANNEL LAYER 2
+```
+Switch(config)# interface range FastEthernet 0/1 -4
+Switch(config-range)# channel-group 1 mode on
+Switch(config-range)# exit
+
+Switch(config)# interface port-channel 1
+Switch(config-if)# description VERS_SWITCH_B
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk encapsulation dot1q
+```
+
+### ETHERCHANNEL LAYER 3
+```
+Switch(config)# interface range FastEthernet 0/1 -4
+Switch(config-range)# no ip address
+Switch(config-range)# channel-group 1 mode on
+Switch(config-range)# exit
+
+Switch(config)# interface port-channel 1
+Switch(config-if)# description VERS_SWITCH_B 
+Switch(config-if)# ip address X.X.X.X X.X.X.X
+```
+
+### PAGP LAYER 2
+```
+Switch(config)# interface range FastEthernet 0/1 -4
+Switch(config-range)# channel-group 1 mode [ Desirable | Auto ]
+Switch(config-range)# exit
+
+Switch(config)# interface port-channel 1
+Switch(config-if)# description VERS_SWITCH_B
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk encapsulation dot1q
+```
+
+### PAGP LAYER 3
+```
+Switch(config)# interface range FastEthernet 0/1 -4
+Switch(config-range)# no ip address
+Switch(config-range)# channel-group 1 mode [ Desirable | Auto ]
+Switch(config-range)# exit
+
+Switch(config)# interface port-channel 1
+Switch(config-if)# description VERS_SWITCH_B 
+Switch(config-if)# ip address X.X.X.X X.X.X.X
+```
+
+### LACP LAYER 2
+```
+Switch(config)# interface range FastEthernet 0/1 -4
+Switch(config-range)# channel-group 1 mode [ Active | Passive ]
+Switch(config-range)# channel-protocol lacp
+Switch(config-range)# exit
+
+Switch(config)# interface port-channel 1
+Switch(config-if)# description VERS_SWITCH_B
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk encapsulation dot1q
+```
+
+### LACP LAYER 3
+```
+Switch(config)# interface range FastEthernet 0/1 -4
+Switch(config-range)# no ip address
+Switch(config-range)# channel-group 1 mode [ Active | Passive ]
+Switch(config-range)# channel-protocol lacp
+Switch(config-range)# exit
+
+Switch(config)# interface port-channel 1
+Switch(config-if)# description VERS_SWITCH_B
+Switch(config-if)# ip address X.X.X.X X.X.X.X
+```
