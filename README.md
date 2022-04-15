@@ -28,7 +28,7 @@ Tous les liens participant à EtherChannel partagent la même adresse de couche 
 Cela rend EtherChannel transparent aux protocoles réseau, aux applications et aux utilisateurs,
 car ils ne voient qu'une seule connexion logique et n'ont pas connaissance des différents liens physiques.
 ```
-_Note : Dans un EtherChannel, tous les ports doivent obligatoirement avoir une vitesse, un paramètre de bidirectionnalité et des informations VLAN identiques. Toute modification d'un port après la création du canal modifie également tous les autres ports du canal._<br>
+_Note : Dans un EtherChannel, tous les ports doivent obligatoirement avoir une vitesse, un paramètre de bidirectionnalité et des informations VLAN identiques. Toute modification d'un port après la création du canal modifie également tous les autres ports du canal._<br><br>
 _Note bis: Un PortChannel est local_
 
 ## PROTOCOLES D'AGRÉGATION DE LIENS
