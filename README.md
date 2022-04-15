@@ -10,6 +10,7 @@ EtherChannel peut être utilisé sur des liens cuivre en paire torsadée aussi b
 monomode et multimode (sur toutes les interfaces définies dans le cadre du standard IEEE 802.3).
 Toutes les interfaces groupées doivent cependant fonctionner à la même vitesse
 ```
+_Note: Un EtherChannel peut être de niveau 2 ou niveau 3._
 
 #### Avantages
 
@@ -27,10 +28,8 @@ Tous les liens participant à EtherChannel partagent la même adresse de couche 
 Cela rend EtherChannel transparent aux protocoles réseau, aux applications et aux utilisateurs,
 car ils ne voient qu'une seule connexion logique et n'ont pas connaissance des différents liens physiques.
 ```
-
-_Note: Un EtherChannel peut être de niveau 2 ou niveau 3._<br>
-_Note bis: Dans un EtherChannel, tous les ports doivent obligatoirement avoir une vitesse, un paramètre de bidirectionnalité et des informations VLAN identiques. Toute modification d'un port après la création du canal modifie également tous les autres ports du canal._
-
+_Note : Dans un EtherChannel, tous les ports doivent obligatoirement avoir une vitesse, un paramètre de bidirectionnalité et des informations VLAN identiques. Toute modification d'un port après la création du canal modifie également tous les autres ports du canal._
+_Note bis: Un PortChannel est local_
 
 ## PROTOCOLES D'AGRÉGATION DE LIENS
 
