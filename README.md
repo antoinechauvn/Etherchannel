@@ -39,8 +39,8 @@ _Note bis: Dans un EtherChannel, tous les ports doivent obligatoirement avoir un
 Le protocole PAgP est un protocole propriétaire de Cisco qui facilite la création automatique de liaisons
 EtherChannel. Quand une liaison EtherChannel est configurée grâce à PAgP, des paquets PAgP sont envoyés
 entre les ports compatibles EtherChannel pour négocier la formation d'un canal. Quand PAgP identifie des
-liaisons Ethernet associées, il groupe les liaisons dans un EtherChannel. L'EtherChannel est ensuite ajouté
-à l'arbre recouvrant comme port unique.
+liaisons Ethernet associées, il groupe les liaisons dans un EtherChannel. L'EtherChannel est ensuite
+ajouté à l'arbre recouvrant comme port unique.
 
 S'il est activé, PAgP gère également l'EtherChannel. Les paquets PAgP sont envoyés toutes les 30 secondes.
 PAgP vérifie la cohérence de la configuration et gère les ajouts de liaison et les défaillances entre
@@ -55,17 +55,18 @@ aux périphériques d'envoyer des LACPDU (Link Aggregation Control Protocol Data
 établir une connexion d'agrégation de liens. Vous devez toujours configurer le lien d'agrégation sur
 chaque périphérique, mais le protocole LACP permet d'éviter l'un des problèmes les plus courants qui
 peuvent survenir lors de la configuration de l'agrégation de liens : les paramètres du lien d'agrégation
-sont mal configurés. Si les périphériques détectent qu'ils ne peuvent pas établir de connexion d'agrégation
-de liens, ils n'essaient pas de l'établir et la liaison s'affiche comme « hors service » dans l'interface
+sont mal configurés.
+Si les périphériques détectent qu'ils ne peuvent pas établir de connexion d'agrégation de liens, ils
+n'essaient pas de l'établir et la liaison s'affiche comme « hors service » dans l'interface
 d'administration.
 
 Une autre caractéristique utile du LACP est que lorsqu'une liaison membre cesse d'envoyer des LACPDU
 (si le câble est débranché, par exemple), il est retiré du lien d'agrégation.
 Cela permet de minimiser la perte de paquets.
 
-Les deux périphériques doivent prendre en charge le LACP pour que vous puissiez configurer un lien d'agrégation
-dynamique entre ces périphériques. Nous vous recommandons d'utiliser le LACP au lieu d'un lien d'agrégation
-statique chaque fois que les deux périphériques prennent en charge le LACP.
+Les deux périphériques doivent prendre en charge le LACP pour que vous puissiez configurer un lien
+d'agrégation dynamique entre ces périphériques. Nous vous recommandons d'utiliser le LACP au lieu d'un
+lien d'agrégation statique chaque fois que les deux périphériques prennent en charge le LACP.
 ```
 
 ## CONFIGURATION
